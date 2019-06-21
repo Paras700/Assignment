@@ -1,26 +1,13 @@
 <!DOCTYPE html>
 <head>
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <h1>Employee Record</h></br><hr>
+      <script>
+        let data = localStorage.getItem('user');
+        let p = JSON.parse(data);  
+        p.map(function(item){
+           document.write(item.name+"  "+item.desigation+" "+item.grade);
+        })
+      </script>
 </head>
-<body>
-    <h1>Thank you</h>
-        <table>
-                <tr>
-                  <th>Name</th>
-                  <th>Desigation</th>
-                  <th>salary</th>
-                  <th>Grade</th>
-                  <th>Year</th>
-                </tr>
-                <tr>
-                  <td id="td1"></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </table>
-         <script src="../Assignment/save.js"></script>     
-    </body>
 <html>
