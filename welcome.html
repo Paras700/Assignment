@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
     <h1>Employee Record</h></br><hr>
-      <script>
-        let data = localStorage.getItem('user');
-        let p = JSON.parse(data);  
-        p.map(function(item){
-           document.write(item.name+"  "+item.desigation+" "+item.grade);
-        })
-      </script>
-</head>
+  </head>
+<body>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Desigation</th>
+      <th>grade</th>
+      <th>salary</th>
+      <th>YearOfPassing</th>
+    </tr>
+    <tr>
+      <td class="demo"></td>
+      <td class="demo"></td>
+      <td class="demo"></td>
+      <td class="demo"></td>
+      <td class="demo"></td>
+    </tr>
+  </table>
+  <script>
+    let data = localStorage.getItem('user');
+    let array = JSON.parse(data);  
+    array.sort(function(a,b){
+       return a.salary - b.salary;   
+    });
+
+    console.log(array);
+    array.map(function(v){
+      let item = document.getElementsByClassName('demo');
+      item[0].innerHTML = v.name;
+      item[1].innerHTML = v.desigation;
+      item[2].innerHTML = v.grade;
+      item[3].innerHTML = v.salary;
+      item[4].innerHTML = v.year;
+    });
+  </script>
+</body>
 <html>
